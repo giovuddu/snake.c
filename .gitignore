@@ -1,1 +1,13 @@
+# Build output (see Makefile: TARGET = snake)
+snake
+
+# Object files and dependency files
+*.o
+*.d
 *.out
+
+# Debug symbols (macOS)
+*.dSYM/
+
+# macOS
+.DS_Store
