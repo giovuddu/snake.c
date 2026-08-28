@@ -1,5 +1,5 @@
 CC      = gcc
-CFLAGS  = -std=c23 -Wall -Wextra -Wpedantic -MMD -MP -O2
+CFLAGS  = -std=gnu23 -Wall -Wextra -Wpedantic -MMD -MP -O2
 LDFLAGS =
 LDLIBS  =
 
