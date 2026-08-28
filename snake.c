@@ -117,7 +117,7 @@ bool gen_food_in_grid(grid_t grid) {
 }
 
 void print_grid(grid_t grid) {
-    printf("\033[2J\033[H");
+    printf("\033[H");
     for (int y = GRID_WIDTH - 1; y >= 0; y--) {
         for (int x = 0; x < GRID_WIDTH; x++) {
             grid_cell_t cur = get_cell(grid, x, y);
@@ -194,6 +194,7 @@ void set_raw_mode() {
 }
 
 void restore_terminal() {
+    printf("\033[?25h");
     tcsetattr(STDIN_FILENO, TCSANOW, &original);
 }
 
@@ -231,6 +232,7 @@ long now_ms() {
 }
 
 int main() {
+    printf("\033[?25l");
     srand(time(NULL));
     set_raw_mode();
     atexit(restore_terminal);
